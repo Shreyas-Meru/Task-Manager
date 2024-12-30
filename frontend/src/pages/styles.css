@@ -1,0 +1,506 @@
+/* General body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center;     /* Vertically centers the content */
+  /* height: 100vh; */
+  /* overflow: hidden; */
+}
+
+/* Home page container */
+.home-page {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 1s ease-out;
+  transform: scale(0.98);
+  margin: 0 auto; /* Ensures it is centered horizontally */
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4CAF50;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* Task form styling */
+.task-form {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.task-form:hover {
+  transform: scale(1.02);
+}
+
+.task-form input,
+/* .task-form button, */
+.task-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.task-form input:focus,
+.task-form button:focus,
+.task-form textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+/* Task list styling */
+.task-list {
+  padding: 0;
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #E0F8E0;
+  transform: translateX(5px);
+}
+
+.task-item button {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-item button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.task-item button:active {
+  transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions for the form elements */
+.task-item button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Adjustments for better input styles */
+.task-form textarea {
+  height: 100px;
+  resize: vertical;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+button:disabled {
+  background-color: #dcdcdc;
+  cursor: not-allowed;
+}
+
+/* Enhance select dropdown */
+select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  appearance: none; /* removes default styling */
+  -webkit-appearance: none; /* for Safari */
+  -moz-appearance: none; /* for Firefox */
+}
+
+select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background-color: #f9f9f9;
+}
+
+select::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-left: -20px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+
+/* Style for the container around select for better positioning */
+.select-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* Enhanced DatePicker input design */
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.react-datepicker__input-container input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Green shadow on focus */
+}
+
+/* DatePicker container */
+.date-picker-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px; /* Adjust max-width for better layout */
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 20px; /* Space between the input and other elements */
+}
+
+/* Align DatePicker and Priority Dropdown in one row */
+.date-priority-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* Space between DatePicker and Dropdown */
+  margin-bottom: 20px;
+}
+
+.priority-dropdown {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+.priority-dropdown select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.priority-dropdown select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.date-picker-container {
+  flex: 1;
+  position: relative;
+  margin-top: 25px;
+  width: 100%;
+}
+
+/* Input field styling */
+.date-picker-container input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.date-picker-container input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .date-priority-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .react-datepicker__month-container {
+    max-width: 100%;
+  }
+
+  .react-datepicker__header {
+    font-size: 1rem;
+    padding: 10px 8px;
+  }
+}
+
+/* Navigation arrows with circular and corner effect */
+.react-datepicker__navigation--previous, 
+.react-datepicker__navigation--next {
+  width: 36px;  /* Increased size for circular effect */
+  height: 36px; /* Increased size for circular effect */
+  background-color: white;
+  border: 2px solid #4CAF50;  /* Green border for a more defined look */
+  color: #4CAF50; 
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;  /* Makes the button circular */
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Adding arrows */
+.react-datepicker__navigation--previous::before {
+  content: '←'; /* Left arrow */
+}
+
+.react-datepicker__navigation--next::before {
+  content: '→'; /* Right arrow */
+}
+
+/* Hover effect for circular arrows */
+.react-datepicker__navigation--previous:hover, 
+.react-datepicker__navigation--next:hover {
+  background-color: #388e3c;  /* Darker green for background on hover */
+  color: white;  /* White color for the arrow */
+  transform: scale(1.2);  /* Slight scale effect */
+}
+
+/* Focus effect for circular arrows */
+.react-datepicker__navigation--previous:focus,
+.react-datepicker__navigation--next:focus {
+  outline: none;
+  background-color: #388e3c;  /* Darker green on focus */
+  color: white;  /* White arrow when focused */
+  transform: scale(1.2);  /* Slight scale effect when focused */
+}
+
+/* Optional: Add a subtle shadow for better visual feedback */
+.react-datepicker__navigation--previous:hover, 
+.react-datepicker__navigation--next:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);  /* Add a subtle shadow on hover */
+}
+
+/* Removing triangle and enhancing header styling */
+.react-datepicker__triangle {
+  display: none;
+}
+
+.react-datepicker__header {
+  background-color: lightgreen;
+  color: white;
+  padding: 14px 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Highlighted day styles */
+.react-datepicker__day--highlighted {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Day hover and focus effects */
+.react-datepicker__day:hover {
+  background-color: #f0f8ff;
+  color: #388e3c; 
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.react-datepicker__day--today {
+  background-color: #FFEB3B;
+  color: #000;
+  font-weight: bold;
+}
+
+.react-datepicker__day--selected {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--disabled {
+  color: #bdbdbd;
+  background-color: transparent;
+}
+
+/* Month/Year dropdown */
+.react-datepicker__header__dropdown {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.react-datepicker__header__dropdown:hover {
+  background-color: #388e3c;
+}
+
+/* Calendar layout improvements */
+.react-datepicker__month-container {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background-color: white;
+  padding: 15px;
+  max-width: 320px;
+  z-index: 999;
+}
+
+/* Animations for the calendar popup */
+.react-datepicker-popper {
+  animation: popUp 0.3s ease-in-out;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Footer styling */
+.react-datepicker__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+/* Custom "Today" button */
+.react-datepicker__today-button {
+  background-color: #FFEB3B;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.react-datepicker__today-button:hover {
+  background-color: #fdd835;
+}
+
+.react-datepicker__today-button:active {
+  background-color: #fbc02d;
+}
+
+/* Task form button styling */
+.sub_btn {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase; /* Make text uppercase */
+}
+
+/* Hover effect */
+.sub_btn:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scale effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+}
+
+/* Active effect */
+.sub_btn:active {
+  transform: scale(0.98); /* Slight shrink on click */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Smaller shadow on click */
+}
+
+/* Disabled button */
+.sub_btn:disabled {
+  background-color: #dcdcdc; /* Grey background */
+  color: #bdbdbd; /* Grey text */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+  box-shadow: none; /* Remove shadow for disabled button */
+}
+
+/* Smooth transition on all states */
+.sub_btn {
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}

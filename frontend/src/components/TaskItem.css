@@ -1,0 +1,127 @@
+/* Main task item container */
+.task-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border-left: 5px solid transparent; /* Will change based on task status */
+  }
+  
+  /* Task status indicator */
+  .task-item.pending {
+    border-left-color: #ff6f61; /* Red for pending tasks */
+  }
+  
+  .task-item.completed {
+    border-left-color: #4caf50; /* Green for completed tasks */
+  }
+  
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .priority-badge {
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  
+  .high-priority {
+    background-color: #ff6f61;
+  }
+  
+  .medium-priority {
+    background-color: #ffeb3b;
+  }
+  
+  .low-priority {
+    background-color: #4caf50;
+  }
+  
+  .task-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .task-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  strong {
+    color: #333;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .status-btn {
+    background-color: #4caf50;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Icon styles */
+  .icon-check::before {
+    content: '\2713'; /* Checkmark icon */
+    margin-right: 8px;
+  }
+  
+  .icon-reopen::before {
+    content: '\21bb'; /* Reopen icon */
+    margin-right: 8px;
+  }
+  
+  .icon-trash::before {
+    content: '\1F5D1'; /* Trash can icon */
+    margin-right: 8px;
+  }
+  

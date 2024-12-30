@@ -1,0 +1,26 @@
+/* task-list.css */
+.list-head {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  max-width: 900px; /* Set a max width for better control */
+  margin-left: auto;  /* Centers the container horizontally */
+  margin-right: auto; /* Centers the container horizontally */
+}
+/* Default grid layout with 3 columns for larger screens */
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; /* Adjust the gap between items as needed */
+  }
+  
+  /* For mobile devices (adjust to 1 column) */
+  @media (max-width: 768px) {
+    .task-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
