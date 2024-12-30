@@ -11,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const { data } = await axios.get('https://protected-refuge-10999.herokuapp.com/api/tasks');
+      const { data } = await axios.get('http://localhost:5000/api/tasks');
       setTasks(data);
     };
     fetchTasks();
